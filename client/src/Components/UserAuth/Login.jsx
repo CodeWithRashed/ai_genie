@@ -20,14 +20,14 @@ const Login = () => {
     // Form Container
     <div className="grid grid-cols-2 h-screen items-center">
       {/* Input Container Start*/}
-      <div className="h-full flex flex-col justify-center px-10 shadow-[rgba(0,0,15,0.5)_10px_0px_20px_0px]">
+      <div className="h-full order-last flex flex-col justify-center px-10 shadow-[rgba(0,0,15,0.5)_10px_0px_20px_20px]">
         {/* Form Logo */}
 
-        <div className="logo flex w-full flex-col justify-center items-center">
+        <div className="logo flex w-full flex-col justify-center items-center mb-10">
           <div className="h-10">
             <img className="h-full object-cover" src={Logo} alt="" />
           </div>
-          <p className="my-2 text-sm text-color-subtitle">Create an Account</p>
+          <p className="my-2 text-sm text-color-subtitle">Sign in to your account</p>
         </div>
 
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-2">
@@ -53,6 +53,7 @@ const Login = () => {
                   className="h-10 w-full bg-grey-bg text-color-subtitle  focus:border-color-primary outline-none border-2 border-grey-bg rounded-main py-2 px-3 bg-gray-bg"
                   placeholder="john.doe@gmail.com"
                 />
+                
               </div>
             </div>
 
@@ -96,8 +97,16 @@ const Login = () => {
                   className="h-10 w-full bg-grey-bg text-color-subtitle  focus:border-color-primary outline-none border-2 border-grey-bg rounded-main py-2 px-3 bg-gray-bg"
                   placeholder="Enter Password"
                 />
+                {/* Forgot Password */}
+               
               </div>
+             
             </div>
+            <div className="text-right mt-2">
+                <button className="ml-2 text-blue-600 decoration-2 hover:underline font-normal" >
+                    Forgotten Password
+                  </button>
+                </div>
 
             {errors.password?.type === "required" && (
               <span className="text-red-500">Password is required</span>
