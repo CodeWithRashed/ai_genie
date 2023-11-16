@@ -5,11 +5,12 @@ import { useEffect, useState } from "react";
 const Navbar = () => {
   //Handle Active Route UnderLine
   const [active, setActive] = useState();
-  const location = useLocation()
-  useEffect(()=>{
-    let activeMenu = "/"+ location.pathname.split("/").filter(Boolean).join("")
-    setActive(activeMenu)
-  },[active, location])
+  const location = useLocation();
+  useEffect(() => {
+    let activeMenu =
+      "/" + location.pathname.split("/").filter(Boolean).join("");
+    setActive(activeMenu);
+  }, [active, location]);
   return (
     <div className="flex justify-between items-center my-3 bg-transparent">
       {/* Nav Start */}
@@ -91,7 +92,7 @@ const Navbar = () => {
       {/* Nav End */}
       <div className="">
         <button className="bg-color-primary px-3 py-2 rounded-main text-white">
-          FREE TRIAL
+          Free Trial
         </button>
         <div className="hidden h-10 w-10 rounded-full bg-color-secondary"></div>
       </div>
