@@ -1,4 +1,5 @@
 import { useForm } from "react-hook-form";
+import PropTypes from 'prop-types'; 
 import Logo from "../../assets/logo.png";
 import signUpImage from "../../assets/sign_up.png";
 import { RiLockPasswordFill } from "react-icons/ri";
@@ -235,5 +236,13 @@ const Registration = ({setOnPage}) => {
     </div>
   );
 };
+Registration.propTypes = {
+  // You can declare that a prop is a specific JS primitive. By default, these
+  // are all optional.
+
+  setOnPage: PropTypes.func,
+
+}
 
 export default Registration;
+

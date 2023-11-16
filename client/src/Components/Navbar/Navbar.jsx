@@ -11,7 +11,7 @@ const Navbar = () => {
     setActive(activeMenu)
   },[active, location])
   return (
-    <div className="flex justify-between items-center">
+    <div className="flex justify-between items-center my-3 bg-transparent">
       {/* Nav Start */}
       <div className="h-12">
         <img className="h-full object-cover" src={LogoDark} alt="" />
