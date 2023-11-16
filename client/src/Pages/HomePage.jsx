@@ -1,4 +1,5 @@
 import HomeBanner from "../Components/HomeBanner/HomeBanner";
+import FeatureSection from "../Components/Sections/FeatureSection/FeatureSection";
 import WhyChooseUs from "../Components/Sections/WhyChooseUs/WhyChooseUs";
 
 const HomePage = () => {
@@ -9,6 +10,9 @@ const HomePage = () => {
       </section>
       <section className="my-16">
         <WhyChooseUs></WhyChooseUs>
+      </section>
+      <section className="my-16">
+        <FeatureSection></FeatureSection>
       </section>
     </div>
   );

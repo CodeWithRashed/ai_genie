@@ -15,6 +15,7 @@ module.exports = {
     extend: {
       colors: {
         "color-primary": "var(--color-primary)",
+        "color-primary-light": "var( --color-primary-light)",
         "color-secondary": "var(--color-secondary)",
         "btn-primary-bg": "var(--btn-primary-bg)",
         "btn-secondary-bg": "var(--btn-secondary-bg)",
