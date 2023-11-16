@@ -9,7 +9,9 @@ const HomeBanner = () => {
         backgroundRepeat: "no-repeat",
         backgroundSize: "cover",
       }}>
+        <div className=" max-w-[1240px] mx-auto px-[20px] py-5"> 
         <Navbar></Navbar>
+        </div>
       
     </div>
   )
