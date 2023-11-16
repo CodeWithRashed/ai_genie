@@ -5,8 +5,9 @@ import { RiLockPasswordFill } from "react-icons/ri";
 import { MdEmail } from "react-icons/md";
 import { FaEye } from "react-icons/fa";
 import { useState } from "react";
+import PropTypes from 'prop-types'; 
 
-const Login = () => {
+const Login = ({setOnPage}) => {
   //Show Password Status
   const [isShowPass, setIsShowPass] = useState(null);
 
@@ -20,7 +21,7 @@ const Login = () => {
     // Form Container
     <div className="grid grid-cols-2 h-screen items-center">
       {/* Input Container Start*/}
-      <div className="h-full order-last flex flex-col justify-center px-10 shadow-[rgba(0,0,15,0.5)_10px_0px_20px_20px]">
+      <div className="h-full flex flex-col justify-center px-10 shadow-[rgba(0,0,15,0.5)_10px_0px_20px_0px]">
         {/* Form Logo */}
 
         <div className="logo flex w-full flex-col justify-center items-center mb-10">
@@ -142,7 +143,7 @@ const Login = () => {
         <div className="text-center">
         <p className="mt-2 text-sm text-color-subtitle ">
                   Do not have an account?
-                  <button className="ml-2 text-blue-600 decoration-2 hover:underline font-medium" >
+                  <button onClick={() => {setOnPage("Register")}} className="ml-2 text-blue-600 decoration-2 hover:underline font-medium" >
                     Sign Up here
                   </button>
                 </p>
@@ -195,5 +196,13 @@ const Login = () => {
     </div>
   );
 };
+
+Login.propTypes = {
+  // You can declare that a prop is a specific JS primitive. By default, these
+  // are all optional.
+
+  setOnPage: PropTypes.func,
+
+}
 
 export default Login;

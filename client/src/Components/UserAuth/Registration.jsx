@@ -7,7 +7,7 @@ import { FaEye, FaUser } from "react-icons/fa";
 import { TbPhotoPlus } from "react-icons/tb";
 import { useState } from "react";
 
-const Registration = () => {
+const Registration = ({setOnPage}) => {
   //Show Password Status
   const [isShowPass, setIsShowPass] = useState(null);
 
@@ -182,7 +182,7 @@ const Registration = () => {
         <div className="text-center">
         <p className="mt-2 text-sm text-color-subtitle ">
                   Already have an account?
-                  <button className="ml-2 text-blue-600 decoration-2 hover:underline font-medium" >
+                  <button onClick={() => {setOnPage("Login")}} className="ml-2 text-blue-600 decoration-2 hover:underline font-medium" >
                     Sign in here
                   </button>
                 </p>
