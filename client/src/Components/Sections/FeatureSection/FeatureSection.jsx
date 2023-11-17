@@ -12,7 +12,7 @@ const FeatureSection = () => {
         subtitle="Get All Features in One Place"
       ></SectionTitle>
       {/* Container */}
-      <div className="grid grid-cols-4 mt-10 gap-5 justify-between ">
+      <div className="grid lg:grid-cols-4 mt-10 gap-5 justify-between ">
 
         {/* card start */}
         <div className="rounded-main bg-white drop-shadow-xl border-2 border-t-color-primary hover:border-color-primary  px-2 py-8 flex flex-col gap-10 relative group overflow-hidden transition-all ease-in-out hover:scale-105">

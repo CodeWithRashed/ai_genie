@@ -12,7 +12,7 @@ const PricingSection = () => {
       </div>
       <div>
         {/* Container */}
-        <div className="grid grid-cols-3 gap-10">
+        <div className="grid lg:grid-cols-3 gap-10">
           {/* Card */}
           <div className="card group text-center relative transition-all ease-in-out hover:scale-105 border-2 border-b-color-primary rounded-main overflow-hidden">
             <div className="absolute -z-10 group-hover:h-[190px] h-0 !w-full transition-all ease-in-out">

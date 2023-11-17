@@ -10,7 +10,7 @@ const HomePage = () => {
   return (
     <div>
       <header>
-        <section className="h-[100vh]">
+        <section className="lg:h-[100vh] h-[80vh]">
           <HomeBanner></HomeBanner>
         </section>
       </header>

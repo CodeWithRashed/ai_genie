@@ -1,4 +1,5 @@
 const withMT = require("@material-tailwind/react/utils/withMT")
+
 /** @type {import('tailwindcss').Config} */
 module.exports = withMT({
   content: [
@@ -16,6 +17,9 @@ module.exports = withMT({
       Inter: "Inter"
     },
     extend: {
+      backgroundImage: {
+        'banner-bg': `url('./src/assets/banner-bg.png')`
+      },
       colors: {
         "color-primary": "var(--color-primary)",
         "color-primary-light": "var( --color-primary-light)",

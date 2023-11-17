@@ -5,9 +5,9 @@ import { FaCode } from "react-icons/fa";
 const WhyChooseUs = () => {
   return (
     <div>
-      <div className="grid grid-cols-2 justify-between key-point-container">
-        <div className="image flex justify-start py-10 pr-10">
-          <img className="w-[90%] object-cover" src={keyPointImage} alt="" />
+      <div className="grid lg:grid-cols-2 justify-center lg:justify-between mx-auto key-point-container">
+        <div className="image lg:flex  lg:justify-start py-10 lg:pr-10">
+          <img className="w-full h-full lg:w-[90%] object-cover" src={keyPointImage} alt="" />
         </div>
         <div className="content justify-start items-start">
           <h1 className="text-4xl font-bold text-color-primary mb-10">
