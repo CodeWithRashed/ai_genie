@@ -1,3 +1,4 @@
+import { Footer } from "../Components/Footer/Footer";
 import HomeBanner from "../Components/HomeBanner/HomeBanner";
 import FeatureSection from "../Components/Sections/FeatureSection/FeatureSection";
 import PricingSection from "../Components/Sections/PricingSection/PricingSection";
@@ -8,9 +9,12 @@ import WhyChooseUs from "../Components/Sections/WhyChooseUs/WhyChooseUs";
 const HomePage = () => {
   return (
     <div>
-      <section className="h-[100vh]">
-        <HomeBanner></HomeBanner>
-      </section>
+      <header>
+        <section className="h-[100vh]">
+          <HomeBanner></HomeBanner>
+        </section>
+      </header>
+
       <section className="my-16">
         <WhyChooseUs></WhyChooseUs>
       </section>
@@ -21,11 +25,14 @@ const HomePage = () => {
         <PricingSection></PricingSection>
       </section>
       <section className="my-16">
-      <ReviewSection></ReviewSection>
+        <ReviewSection></ReviewSection>
       </section>
       <section className="my-16">
         <Subscribe></Subscribe>
       </section>
+      <footer>
+        <Footer></Footer>
+      </footer>
     </div>
   );
 };
