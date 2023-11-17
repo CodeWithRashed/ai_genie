@@ -5,10 +5,10 @@ const HomeBanner = () => {
     <div className="absolute -z-10 !w-full h-full top-0 left-0 !overflow-hidden bg-banner-bg bg-cover lg:bg-contain bg-no-repeat lg:bg-repeat-x">
       {/* Banner Content */}
       <div className=" banner-content max-w-[1240px] mx-auto px-[20px] h-full ">
-        <div className="grid md:grid-cols-2 lg:gap-3 lg:mt-0 mt-24 md:mt-36 justify-center lg:h-full lg:justify-between lg:items-center">
+        <div className="grid lg:grid-cols-2 lg:gap-3 h-full lg:justify-between justify-center items-center">
           {/* Banner Text Content */}
-          <div className="text-center md:text-left space-y-3 md:order-first order-last">
-            <h1 className="text-3xl md:text-5xl  lg:text-6xl">
+          <div className="text-center lg:text-left space-y-3 md:order-first order-last">
+            <h1 className="text-4xl font-bold lg:font-medium md:text-6xl">
               AI Genie
               <br />
               One of the Best
@@ -22,7 +22,7 @@ const HomeBanner = () => {
           </div>
 
           {/* Banner Image  */}
-          <div className="order-first lg:order-last h-[70%] w-[70%] md:w-full md-h-full mx-auto">
+          <div className="hidden lg:flex">
             <img
               className= "object-cover"
               src={bannerImage}
