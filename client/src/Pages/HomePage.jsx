@@ -1,6 +1,7 @@
 import HomeBanner from "../Components/HomeBanner/HomeBanner";
 import FeatureSection from "../Components/Sections/FeatureSection/FeatureSection";
 import PricingSection from "../Components/Sections/PricingSection/PricingSection";
+import ReviewSection from "../Components/Sections/ReviewSection/ReviewSection";
 import WhyChooseUs from "../Components/Sections/WhyChooseUs/WhyChooseUs";
 
 const HomePage = () => {
@@ -17,6 +18,9 @@ const HomePage = () => {
       </section>
       <section className="my-16">
         <PricingSection></PricingSection>
+      </section>
+      <section className="my-16">
+      <ReviewSection></ReviewSection>
       </section>
     </div>
   );
