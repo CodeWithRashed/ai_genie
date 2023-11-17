@@ -18,7 +18,7 @@ const ReviewSection = () => {
       </div>
 
       <div
-        className="my-3 relative h-[80vh]"
+        className="my-3 relative h-[80vh] !w-full"
         style={{
           backgroundImage: `url('${ReviewBg}')`,
           backgroundPosition: "bottom",
@@ -26,8 +26,8 @@ const ReviewSection = () => {
           backgroundSize: "cover",
         }}
       >
-        {/* Avatar 1 */}
-        <div className="absolute group top-16 left-24  w-12 h-12">
+        {/* Review 1 */}
+        <div className="absolute group top-[12%] left-[10%]  w-12 h-12">
           <div className="relative rounded-full w-12 h-12 transition-all ease-in-out">
             <div className="overflow-hidden rounded-full border-2 border-color-primary w-12 h-12 transition-all ease-in-out">
               <img
@@ -37,9 +37,9 @@ const ReviewSection = () => {
               />
             </div>
 
-            <div className="absolute text-white h-0 w-0 group-hover:h-28 group-hover:w-52 bg-color-primary -top-[70%] left-[120%] rounded-main group-hover:p-2 transition-all ease-in-out">
+            <div className="absolute text-white h-0 w-0 group-hover:h-28 group-hover:w-52 bg-color-primary -top-[70%] left-[120%] z-20 rounded-main group-hover:p-2 transition-all ease-in-out">
               <div className="hidden group-hover:flex flex-col justify-center items-center gap-2">
-                <h1>John Hardy</h1>
+                <h1>John</h1>
                 <p className="text-sm text-center text-gray-100">
                   Great product! Easy to use and provides excellent results.
                 </p>
@@ -48,8 +48,8 @@ const ReviewSection = () => {
           </div>
         </div>
 
-        {/* Avatar 2 */}
-        <div className="absolute group bottom-20 left-48  w-12 h-12">
+        {/* Review 2 */}
+        <div className="absolute group bottom-[15%] left-[20%]  w-12 h-12">
           <div className="relative rounded-full w-12 h-12 transition-all ease-in-out">
             <div className="overflow-hidden rounded-full border-2 border-color-primary w-12 h-12 transition-all ease-in-out">
               <img
@@ -59,9 +59,9 @@ const ReviewSection = () => {
               />
             </div>
 
-            <div className="absolute text-white h-0 w-0 group-hover:h-28 group-hover:w-52 bg-color-primary -top-[70%] left-[120%] rounded-main group-hover:p-2 transition-all ease-in-out">
+            <div className="absolute text-white h-0 w-0 group-hover:h-28 group-hover:w-52 bg-color-primary z-20 -top-[250%] left-[60%] lg:-top-[70%] lg:left-[120%] rounded-main group-hover:p-2 transition-all ease-in-out">
               <div className="hidden group-hover:flex flex-col justify-center items-center gap-2">
-                <h1>John Hardy</h1>
+                <h1>Myles</h1>
                 <p className="text-sm text-center text-gray-100">
                   Great product! Easy to use and provides excellent results.
                 </p>
@@ -71,7 +71,7 @@ const ReviewSection = () => {
         </div>
 
         {/* Avatar 3 */}
-        <div className="absolute group top-40 right-44  w-12 h-12">
+        <div className="absolute group top-[30%] right-[14%]  w-12 h-12">
           <div className="relative rounded-full w-12 h-12 transition-all ease-in-out">
             <div className="overflow-hidden rounded-full border-2 border-color-primary w-12 h-12 transition-all ease-in-out">
               <img
@@ -81,9 +81,9 @@ const ReviewSection = () => {
               />
             </div>
 
-            <div className=" absolute text-white h-0 w-0 group-hover:h-28 group-hover:w-52 bg-color-primary -top-[70%] right-[120%] rounded-main group-hover:p-2 transition-all ease-in-out">
+            <div className=" absolute text-white h-0 w-0 group-hover:h-28 group-hover:w-52 bg-color-primary z-20 right-[-20%] lg:-top-[70%] lg:right-[120%] rounded-main group-hover:p-2 transition-all ease-in-out">
               <div className="hidden group-hover:flex flex-col justify-center items-center gap-2">
-                <h1>Mark More</h1>
+                <h1>Bennett</h1>
                 <p className="text-sm text-center text-gray-100 ">
                   Great product! Easy to use and provides excellent results.
                 </p>
@@ -93,19 +93,19 @@ const ReviewSection = () => {
         </div>
 
         {/* Avatar 4 */}
-        <div className="absolute group bottom-28 right-52  w-12 h-12">
+        <div className="absolute group bottom-[28%] right-[10%]  w-12 h-12">
           <div className="relative rounded-full w-12 h-12 transition-all ease-in-out">
             <div className="overflow-hidden rounded-full border-2 border-color-primary w-12 h-12 transition-all ease-in-out">
               <img
                 src={user4}
-                alt="Avatar 3"
+                alt="Avatar 4"
                 className="w-12 h-12 rounded-full object-cover group-hover:scale-105 transition-all ease-in-out"
               />
             </div>
 
-            <div className=" absolute text-white h-0 w-0 group-hover:h-28 group-hover:w-52 bg-color-primary -top-[70%] right-[120%] rounded-main group-hover:p-2 transition-all ease-in-out">
+            <div className=" absolute text-white h-0 w-0 group-hover:h-28 group-hover:w-52 bg-color-primary right-0 lg:-top-[70%] lg:right-[120%] rounded-main group-hover:p-2 transition-all ease-in-out">
               <div className="hidden group-hover:flex flex-col justify-center items-center gap-2">
-                <h1>David</h1>
+                <h1>Cody</h1>
                 <p className="text-sm text-center text-gray-100 ">
                   Great product! Easy to use and provides excellent results.
                 </p>
@@ -115,7 +115,7 @@ const ReviewSection = () => {
         </div>
 
         {/* Avatar 5 */}
-        <div className="absolute bottom-60 left-[450px] group w-12 h-12">
+        <div className="absolute bottom-[45%] left-[35%] group w-12 h-12">
           <div className="relative rounded-full w-12 h-12 transition-all ease-in-out">
             <div className="overflow-hidden rounded-full border-2 border-color-primary w-12 h-12 transition-all ease-in-out">
               <img
@@ -125,7 +125,7 @@ const ReviewSection = () => {
               />
             </div>
 
-            <div className=" absolute text-white h-0 w-0 group-hover:h-28 group-hover:w-52 bg-color-primary -top-[70%] right-[120%] rounded-main group-hover:p-2 transition-all ease-in-out">
+            <div className=" absolute text-white h-0 w-0 group-hover:h-28 group-hover:w-52 bg-color-primary left-[-150%] lg:-top-[70%] lg:right-[120%] rounded-main group-hover:p-2 transition-all ease-in-out">
               <div className="hidden group-hover:flex flex-col justify-center items-center gap-2">
                 <h1>Miller</h1>
                 <p className="text-sm text-center text-gray-100 ">
@@ -137,7 +137,7 @@ const ReviewSection = () => {
         </div>
 
         {/* Avatar 6 */}
-        <div className="absolute top-20 right-[500px] group w-12 h-12">
+        <div className="absolute top-[20%] right-[40%] group w-12 h-12">
           <div className="relative rounded-full w-12 h-12 transition-all ease-in-out">
             <div className="overflow-hidden rounded-full border-2 border-color-primary w-12 h-12 transition-all ease-in-out">
               <img
@@ -147,9 +147,9 @@ const ReviewSection = () => {
               />
             </div>
 
-            <div className=" absolute text-white h-0 w-0 group-hover:h-28 group-hover:w-52 bg-color-primary -top-[70%] left-[120%] rounded-main group-hover:p-2 transition-all ease-in-out">
+            <div className=" absolute text-white h-0 w-0 group-hover:h-28 group-hover:w-52 bg-color-primary left-[-150%] lg:-top-[70%] lg:left-[120%] rounded-main group-hover:p-2 transition-all ease-in-out">
               <div className="hidden group-hover:flex flex-col justify-center items-center gap-2">
-                <h1>Miller</h1>
+                <h1>Drake</h1>
                 <p className="text-sm text-center text-gray-100 ">
                   Great product! Easy to use and provides excellent results.
                 </p>
