@@ -4,7 +4,7 @@ import bannerImage from '../../assets/banner.png'
 const HomeBanner = () => {
   return (
     <div
-        className="absolute -z-10 top-0 left-0 w-full h-[95vh] !overflow-hidden"
+        className="absolute -z-10 top-0 left-0 w-full h-full !overflow-hidden"
         style={{
           backgroundImage: `url('${bannerBg}')`,
           backgroundPosition: "bottom",
