@@ -22,9 +22,9 @@ const HomeBanner = () => {
           </div>
 
           {/* Banner Image  */}
-          <div className="hidden lg:flex">
+          <div className="hidden lg:flex justify-center items-center">
             <img
-              className= "object-cover"
+              className= "w-[80%] object-cover"
               src={bannerImage}
               alt=""
             />
