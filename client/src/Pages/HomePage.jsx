@@ -8,7 +8,7 @@ import WhyChooseUs from "../Components/Sections/WhyChooseUs/WhyChooseUs";
 
 const HomePage = () => {
   return (
-    <div>
+    <div >
       <header>
         <section className="lg:h-[100vh] h-[80vh]">
           <HomeBanner></HomeBanner>
@@ -21,10 +21,13 @@ const HomePage = () => {
       <section className="my-16">
         <FeatureSection></FeatureSection>
       </section>
-      <section className="my-16">
+      <section id="Pricing" className="my-16">
         <PricingSection></PricingSection>
       </section>
-      <section className="my-16">
+      <section id="Reviews" className="my-16">
+        <ReviewSection></ReviewSection>
+      </section>
+      <section id="Contact" className="my-16">
         <ReviewSection></ReviewSection>
       </section>
       <section className="my-16">
