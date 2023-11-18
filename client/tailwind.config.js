@@ -19,7 +19,7 @@ module.exports = withMT({
     extend: {
       backgroundImage: {
         'banner-bg': `url('./src/assets/banner-bg.png')`,
-        'contact-banner-bg': `url('./src/assets/contact-banner-bg.webp')`
+        'contact-banner-bg': `linear-gradient(to right bottom, rgba(24,24,24, 0.8), rgba(24,24,24, 0.8)), url('./src/assets/contact-banner-bg.webp')`
       },
       colors: {
         "color-primary": "var(--color-primary)",
