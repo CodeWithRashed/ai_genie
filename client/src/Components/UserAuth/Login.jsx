@@ -5,9 +5,10 @@ import { RiLockPasswordFill } from "react-icons/ri";
 import { MdEmail } from "react-icons/md";
 import { FaEye } from "react-icons/fa";
 import { useState } from "react";
-import PropTypes from 'prop-types'; 
+import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 
-const Login = ({setOnPage}) => {
+const Login = ({ setOnPage }) => {
   //Show Password Status
   const [isShowPass, setIsShowPass] = useState(null);
 
@@ -19,23 +20,23 @@ const Login = ({setOnPage}) => {
   const onSubmit = (data) => console.log(data);
   return (
     // Form Container
-    <div className="grid grid-cols-2 h-screen items-center">
+    <div className="grid lg:grid-cols-2 h-screen items-center">
       {/* Input Container Start*/}
-      <div className="h-full flex flex-col justify-center px-10 shadow-[rgba(0,0,15,0.5)_10px_0px_20px_0px]">
+      <div className="h-full my-10 flex flex-col justify-center px-10 lg:shadow-[rgba(0,0,15,0.5)_10px_0px_20px_0px]">
         {/* Form Logo */}
 
         <div className="logo flex w-full flex-col justify-center items-center mb-10">
           <div className="h-10">
-            <img className="h-full object-cover" src={Logo} alt="" />
+            <Link to="/">
+              <img className="h-full object-cover" src={Logo} alt="" />
+            </Link>
           </div>
-          <p className="my-2 text-sm text-color-subtitle">Sign in to your account</p>
+          <p className="my-2 text-sm text-color-subtitle">
+            Sign in to your account
+          </p>
         </div>
 
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-2">
-         
-
-          
-
           {/* input group start */}
           <div className="flex flex-col">
             <div className="input-container relative">
@@ -54,7 +55,6 @@ const Login = ({setOnPage}) => {
                   className="h-10 w-full bg-grey-bg text-color-subtitle  focus:border-color-primary outline-none border-2 border-grey-bg rounded-main py-2 px-3 bg-gray-bg"
                   placeholder="john.doe@gmail.com"
                 />
-                
               </div>
             </div>
 
@@ -99,15 +99,13 @@ const Login = ({setOnPage}) => {
                   placeholder="Enter Password"
                 />
                 {/* Forgot Password */}
-               
               </div>
-             
             </div>
             <div className="text-right mt-2">
-                <button className="ml-2 text-blue-600 decoration-2 hover:underline font-normal" >
-                    Forgotten Password
-                  </button>
-                </div>
+              <button className="ml-2 text-blue-600 decoration-2 hover:underline font-normal">
+                Forgotten Password
+              </button>
+            </div>
 
             {errors.password?.type === "required" && (
               <span className="text-red-500">Password is required</span>
@@ -141,12 +139,17 @@ const Login = ({setOnPage}) => {
 
         {/* Google Button Start */}
         <div className="text-center">
-        <p className="mt-2 text-sm text-color-subtitle ">
-                  Do not have an account?
-                  <button onClick={() => {setOnPage("Register")}} className="ml-2 text-blue-600 decoration-2 hover:underline font-medium" >
-                    Sign Up here
-                  </button>
-                </p>
+          <p className="mt-2 text-sm text-color-subtitle ">
+            Do not have an account?
+            <button
+              onClick={() => {
+                setOnPage("Register");
+              }}
+              className="ml-2 text-blue-600 decoration-2 hover:underline font-medium"
+            >
+              Sign Up here
+            </button>
+          </p>
         </div>
         <div className=" py-6 flex items-center text-sm text-gray-400 uppercase before:flex-[1_1_0%] before:border-t before:me-6 after:flex-[1_1_0%] after:border-t after:ms-6">
           Or
@@ -189,7 +192,7 @@ const Login = ({setOnPage}) => {
       {/* Input Container End*/}
 
       {/* Image Container Start*/}
-      <div>
+      <div className="lg:block hidden">
         <img src={signInImage} alt="" />
       </div>
       {/* Image Container End*/}
@@ -198,11 +201,7 @@ const Login = ({setOnPage}) => {
 };
 
 Login.propTypes = {
-  // You can declare that a prop is a specific JS primitive. By default, these
-  // are all optional.
-
   setOnPage: PropTypes.func,
-
-}
+};
 
 export default Login;

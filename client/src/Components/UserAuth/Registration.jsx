@@ -1,5 +1,5 @@
 import { useForm } from "react-hook-form";
-import PropTypes from 'prop-types'; 
+import PropTypes from "prop-types";
 import Logo from "../../assets/logo.png";
 import signUpImage from "../../assets/sign_up.png";
 import { RiLockPasswordFill } from "react-icons/ri";
@@ -7,8 +7,9 @@ import { MdEmail } from "react-icons/md";
 import { FaEye, FaUser } from "react-icons/fa";
 import { TbPhotoPlus } from "react-icons/tb";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
-const Registration = ({setOnPage}) => {
+const Registration = ({ setOnPage }) => {
   //Show Password Status
   const [isShowPass, setIsShowPass] = useState(null);
 
@@ -20,14 +21,16 @@ const Registration = ({setOnPage}) => {
   const onSubmit = (data) => console.log(data);
   return (
     // Form Container
-    <div className="grid grid-cols-2 h-screen items-center">
+    <div className="grid lg:grid-cols-2 h-screen items-center">
       {/* Input Container Start*/}
-      <div className="h-full flex flex-col justify-center px-10 shadow-[rgba(0,0,15,0.5)_10px_0px_20px_0px]">
+      <div className="h-full flex my-10 flex-col justify-center px-10 lg:shadow-[rgba(0,0,15,0.5)_10px_0px_20px_0px]">
         {/* Form Logo */}
 
         <div className="logo flex w-full flex-col justify-center items-center">
           <div className="h-10">
-            <img className="h-full object-cover" src={Logo} alt="" />
+            <Link to="/">
+              <img className="h-full object-cover" src={Logo} alt="" />
+            </Link>
           </div>
           <p className="my-2 text-sm text-color-subtitle">Create an Account</p>
         </div>
@@ -181,12 +184,17 @@ const Registration = ({setOnPage}) => {
 
         {/* Google Button Start */}
         <div className="text-center">
-        <p className="mt-2 text-sm text-color-subtitle ">
-                  Already have an account?
-                  <button onClick={() => {setOnPage("Login")}} className="ml-2 text-blue-600 decoration-2 hover:underline font-medium" >
-                    Sign in here
-                  </button>
-                </p>
+          <p className="mt-2 text-sm text-color-subtitle ">
+            Already have an account?
+            <button
+              onClick={() => {
+                setOnPage("Login");
+              }}
+              className="ml-2 text-blue-600 decoration-2 hover:underline font-medium"
+            >
+              Sign in here
+            </button>
+          </p>
         </div>
         <div className=" py-6 flex items-center text-sm text-gray-400 uppercase before:flex-[1_1_0%] before:border-t before:me-6 after:flex-[1_1_0%] after:border-t after:ms-6">
           Or
@@ -229,7 +237,7 @@ const Registration = ({setOnPage}) => {
       {/* Input Container End*/}
 
       {/* Image Container Start*/}
-      <div>
+      <div className="hidden lg:block">
         <img src={signUpImage} alt="" />
       </div>
       {/* Image Container End*/}
@@ -241,8 +249,6 @@ Registration.propTypes = {
   // are all optional.
 
   setOnPage: PropTypes.func,
-
-}
+};
 
 export default Registration;
-
