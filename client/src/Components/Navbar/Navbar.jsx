@@ -1,4 +1,4 @@
-import { Link, NavLink, useLocation } from "react-router-dom";
+import { Link, NavLink} from "react-router-dom";
 import LogoDark from "../../assets/logo.png";
 import { useState } from "react";
 import { MenuDrawer } from "./MenuDrawer";

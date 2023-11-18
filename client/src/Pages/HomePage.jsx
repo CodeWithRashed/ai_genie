@@ -1,3 +1,4 @@
+import Contact from "../Components/Contact/Contact";
 import { Footer } from "../Components/Footer/Footer";
 import HomeBanner from "../Components/HomeBanner/HomeBanner";
 import FeatureSection from "../Components/Sections/FeatureSection/FeatureSection";
@@ -28,7 +29,7 @@ const HomePage = () => {
         <ReviewSection></ReviewSection>
       </section>
       <section id="Contact" className="my-16">
-        <ReviewSection></ReviewSection>
+        <Contact></Contact>
       </section>
       <section className="my-16">
         <Subscribe></Subscribe>
