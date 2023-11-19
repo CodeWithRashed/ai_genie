@@ -3,6 +3,7 @@ import TopDashNav from "../Components/Navbar/DashboardNav/TopDashNav";
 import { Logo } from "../Components/Shared/Logo";
 import { UserDashNav } from "../Components/Navbar/DashboardNav/UserDashNav";
 import { AdminNav } from "../Components/Navbar/DashboardNav/AdminNav";
+import { RepresentativeNav } from "../Components/Navbar/DashboardNav/RepresentativeNav";
 
 const DashboardLayout = () => {
   return (
@@ -18,7 +19,8 @@ const DashboardLayout = () => {
           <hr className="mt-3" />
           <div className="h-auto">
             {/* <UserDashNav></UserDashNav> */}
-            <AdminNav></AdminNav>
+            {/* <AdminNav></AdminNav> */}
+            <RepresentativeNav></RepresentativeNav>
           </div>
         </div>
         <div className="col-span-9 ">

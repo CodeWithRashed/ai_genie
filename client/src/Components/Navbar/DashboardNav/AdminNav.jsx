@@ -19,7 +19,12 @@ import {
 } from "@material-tailwind/react";
 
 //React Icons
-import { FaRegUserCircle, FaAngleDown, FaAngleRight, FaShoppingCart } from "react-icons/fa";
+import {
+  FaRegUserCircle,
+  FaAngleDown,
+  FaAngleRight,
+  FaShoppingCart,
+} from "react-icons/fa";
 
 import { MdOutlineDashboard, MdDashboard, MdInbox } from "react-icons/md";
 import { IoCodeWorking } from "react-icons/io5";
@@ -28,17 +33,16 @@ import { BiSolidNoEntry } from "react-icons/bi";
 import { PiDatabaseFill } from "react-icons/pi";
 import { CiShop } from "react-icons/ci";
 
-
 //Shared Components
 import ProTag from "../../Shared/ProTag";
 
 //Functions Components
 export function AdminNav() {
-    const [open, setOpen] = useState(0);
- 
-    const handleOpenAccordion = (value) => {
-      setOpen(open === value ? 0 : value);
-    };
+  const [open, setOpen] = useState(0);
+
+  const handleOpenAccordion = (value) => {
+    setOpen(open === value ? 0 : value);
+  };
   const navigator = useNavigate();
   const [isPro, setIsPro] = useState(true);
   const [size, setSize] = useState(null);
@@ -74,83 +78,115 @@ export function AdminNav() {
           </button>
           <hr className="mb-3" />
           <Accordion
-          open={open === 1}
-          icon={
-            <FaAngleDown
-              strokeWidth={2.5}
-              className={`mx-auto  h-4 w-4 transition-transform ${open === 1 ? "rotate-180" : ""}`}
-            />
-          }
-        >
-          <ListItem className="p-0" selected={open === 1}>
-            <AccordionHeader onClick={() => handleOpenAccordion(1)} className="border-b-0 p-3">
-              <ListItemPrefix>
-                <PiDatabaseFill className="h-5 w-5" />
-              </ListItemPrefix>
-              <Typography color="blue-gray" className="mr-auto font-normal">
-                User Data
-              </Typography>
-            </AccordionHeader>
-          </ListItem>
-          <AccordionBody className="py-1">
-            <List className="p-0">
-              <ListItem>
+            open={open === 1}
+            icon={
+              <FaAngleDown
+                strokeWidth={2.5}
+                className={`mx-auto  h-4 w-4 transition-transform ${
+                  open === 1 ? "rotate-180" : ""
+                }`}
+              />
+            }
+          >
+            <ListItem className="p-0" selected={open === 1}>
+              <AccordionHeader
+                onClick={() => handleOpenAccordion(1)}
+                className="border-b-0 p-3"
+              >
                 <ListItemPrefix>
-                  <FaAngleRight strokeWidth={3} className="h-3 w-5" />
+                  <PiDatabaseFill className="h-5 w-5" />
                 </ListItemPrefix>
-                Customers
-              </ListItem>
-              <ListItem>
+                <Typography color="blue-gray" className="mr-auto font-normal">
+                  User Data
+                </Typography>
+              </AccordionHeader>
+            </ListItem>
+            <AccordionBody className="py-1">
+              <List className="p-0">
+                <button
+                  onClick={() => {
+                    let location = "/dashboard/customers";
+                    navigatePros(location);
+                  }}
+                >
+                  <ListItem>
+                    <ListItemPrefix>
+                      <FaAngleRight strokeWidth={3} className="h-3 w-5" />
+                    </ListItemPrefix>
+                    Customers
+                  </ListItem>
+                </button>
+                <button
+                  onClick={() => {
+                    let location = "/dashboard/representatives";
+                    navigatePros(location);
+                  }}
+                >
+                  <ListItem>
+                    <ListItemPrefix>
+                      <FaAngleRight strokeWidth={3} className="h-3 w-5" />
+                    </ListItemPrefix>
+                    Representatives
+                  </ListItem>
+                </button>
+                <button
+                  onClick={() => {
+                    let location = "/dashboard/admins";
+                    navigatePros(location);
+                  }}
+                >
+                  <ListItem>
+                    <ListItemPrefix>
+                      <FaAngleRight strokeWidth={3} className="h-3 w-5" />
+                    </ListItemPrefix>
+                    Admins
+                  </ListItem>
+                </button>
+              </List>
+            </AccordionBody>
+          </Accordion>
+          <Accordion
+            open={open === 2}
+            icon={
+              <FaAngleDown
+                strokeWidth={2.5}
+                className={`mx-auto h-4 w-4 transition-transform ${
+                  open === 2 ? "rotate-180" : ""
+                }`}
+              />
+            }
+          >
+            <ListItem className="p-0" selected={open === 2}>
+              <AccordionHeader
+                onClick={() => handleOpenAccordion(2)}
+                className="border-b-0 p-3"
+              >
                 <ListItemPrefix>
-                  <FaAngleRight strokeWidth={3} className="h-3 w-5" />
+                  <CiShop className="h-5 w-5" />
                 </ListItemPrefix>
-                Representatives
-              </ListItem>
-              <ListItem>
-                <ListItemPrefix>
-                  <FaAngleRight strokeWidth={3} className="h-3 w-5" />
-                </ListItemPrefix>
-                Admins
-              </ListItem>
-            </List>
-          </AccordionBody>
-        </Accordion>
-        <Accordion
-          open={open === 2}
-          icon={
-            <FaAngleDown
-              strokeWidth={2.5}
-              className={`mx-auto h-4 w-4 transition-transform ${open === 2 ? "rotate-180" : ""}`}
-            />
-          }
-        >
-          <ListItem className="p-0" selected={open === 2}>
-            <AccordionHeader onClick={() => handleOpenAccordion(2)} className="border-b-0 p-3">
-              <ListItemPrefix>
-                <CiShop className="h-5 w-5" />
-              </ListItemPrefix>
-              <Typography color="blue-gray" className="mr-auto font-normal">
-                Shop
-              </Typography>
-            </AccordionHeader>
-          </ListItem>
-          <AccordionBody className="py-1">
-            <List className="p-0">
-              <ListItem>
-                <ListItemPrefix>
-                  <FaAngleRight strokeWidth={3} className="h-3 w-5" />
-                </ListItemPrefix>
-                Orders
-              </ListItem>
-              <ListItem>
-                <ListItemPrefix>
-                  <FaAngleRight strokeWidth={3} className="h-3 w-5" />
-                </ListItemPrefix>
-                Products
-              </ListItem>
-            </List>
-          </AccordionBody>
-        </Accordion>
+                <Typography color="blue-gray" className="mr-auto font-normal">
+                  Shop
+                </Typography>
+              </AccordionHeader>
+            </ListItem>
+            <AccordionBody className="py-1">
+              <List className="p-0">
+                <button
+                  onClick={() => {
+                    let location = "/dashboard/orders";
+                    navigatePros(location);
+                  }}
+                >
+                  <ListItem>
+                    <ListItemPrefix>
+                      <FaAngleRight strokeWidth={3} className="h-3 w-5" />
+                    </ListItemPrefix>
+                    Orders
+                  </ListItem>
+                </button>
+              </List>
+            </AccordionBody>
+          </Accordion>
 
           {/* //Support Inbox// */}
           <button
