@@ -24,14 +24,14 @@ import { IoChatboxEllipsesSharp } from "react-icons/io5";
 import { SiAudiomack } from "react-icons/si";
 import { BiSolidNoEntry } from "react-icons/bi";
 
-import aiGenieIcon from "../../../../public/favicon.png";
+import aiGenieIcon from "/public/favicon.png";
 import ProTag from "../../Shared/ProTag";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 
 export function UserDashNav() {
   const navigator = useNavigate();
-  const [isPro, setIsPro] = useState(false);
+  const [isPro, setIsPro] = useState(true);
   const [size, setSize] = useState(null);
   const handleOpen = (value) => setSize(value);
   const navigatePros = (location) => {
@@ -47,29 +47,56 @@ export function UserDashNav() {
     <div>
       <Card className=" w-full p-4 shadow-xl shadow-blue-gray-900/5">
         <List>
-          <ListItem>
-            <ListItemPrefix>
-              <PresentationChartBarIcon className="h-5 w-5" />
-            </ListItemPrefix>
-            Dashboard
-          </ListItem>
-          <hr className="mb-3" />
-
-          <ListItem>
-            <ListItemPrefix>
-              <TbPhotoCog className="h-5 w-5" />
-            </ListItemPrefix>
-            Image Generation
-          </ListItem>
-          <ListItem>
-            <ListItemPrefix>
-              <IoCodeWorking className="h-5 w-5" />
-            </ListItemPrefix>
-            Code Generation
-          </ListItem>
+          {/* //Dashboard// */}
           <button
             onClick={() => {
-              let location = "/dashboard/text-to-speech";
+              let location = "/dashboard";
+              navigatePros(location);
+            }}
+          >
+            <ListItem>
+              <ListItemPrefix>
+                <PresentationChartBarIcon className="h-5 w-5" />
+              </ListItemPrefix>
+              Dashboard
+            </ListItem>
+          </button>
+          <hr className="mb-3" />
+
+          {/* //Image Generation// */}
+          <button
+            onClick={() => {
+              let location = "/dashboard/generate-image";
+              navigatePros(location);
+            }}
+          >
+            <ListItem>
+              <ListItemPrefix>
+                <TbPhotoCog className="h-5 w-5" />
+              </ListItemPrefix>
+              Image Generation
+            </ListItem>
+          </button>
+
+          {/* //Code Generation// */}
+          <button
+            onClick={() => {
+              let location = "/dashboard/generate-code";
+              navigatePros(location);
+            }}
+          >
+            <ListItem>
+              <ListItemPrefix>
+                <IoCodeWorking className="h-5 w-5" />
+              </ListItemPrefix>
+              Code Generation
+            </ListItem>
+          </button>
+
+          {/* //Summarizer Content*/}
+          <button
+            onClick={() => {
+              let location = "/dashboard/summarize-content";
               navigatePros(location);
             }}
           >
@@ -86,12 +113,22 @@ export function UserDashNav() {
             </ListItem>
           </button>
 
-          <ListItem>
-            <ListItemPrefix>
-              <IoChatboxEllipsesSharp className="h-5 w-5" />
-            </ListItemPrefix>
-            AI Chat
-          </ListItem>
+          {/* //Chat with Ai// */}
+          <button
+            onClick={() => {
+              let location = "/dashboard/chat-with-ai";
+              navigatePros(location);
+            }}
+          >
+            <ListItem>
+              <ListItemPrefix>
+                <IoChatboxEllipsesSharp className="h-5 w-5" />
+              </ListItemPrefix>
+              AI Chat
+            </ListItem>
+          </button>
+
+          {/* //Text to Speech// */}
           <button
             onClick={() => {
               let location = "/dashboard/text-to-speech";
@@ -111,9 +148,11 @@ export function UserDashNav() {
             </ListItem>
           </button>
           <hr className="mt-3" />
+
+          {/* //Support Inbox// */}
           <button
             onClick={() => {
-              let location = "/dashboard/text-to-speech";
+              let location = "/dashboard/inbox-support";
               navigatePros(location);
             }}
           >
@@ -140,12 +179,21 @@ export function UserDashNav() {
               )}
             </ListItem>
           </button>
-          <ListItem>
-            <ListItemPrefix>
-              <UserCircleIcon className="h-5 w-5" />
-            </ListItemPrefix>
-            Profile
-          </ListItem>
+
+          {/* //Profile// */}
+          <button
+            onClick={() => {
+              let location = "/dashboard/profile";
+              navigatePros(location);
+            }}
+          >
+            <ListItem>
+              <ListItemPrefix>
+                <UserCircleIcon className="h-5 w-5" />
+              </ListItemPrefix>
+              Profile
+            </ListItem>
+          </button>
         </List>
         <Card className="relative mt-10 mx-auto rounded-main  bg-color-primary bg-gradient-to-t  from-[#4A25E1]  to-color-primary p-5 text-white text-center">
           <div className="absolute top-[-20%] translate-x-full translate-y-[-5%] border-2 border-white p-2 bg-color-primary rounded-full">
@@ -183,7 +231,6 @@ export function UserDashNav() {
         <div className="p-10">
           <BiSolidNoEntry className="text-5xl text-center w-full text-red-800"></BiSolidNoEntry>
           <p className="mt-5 text-color-title text-center text-xl">
-            {" "}
             This Feature is Only Available for Pro Users
           </p>
         </div>
