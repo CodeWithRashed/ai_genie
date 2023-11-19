@@ -1,3 +1,7 @@
+import { useNavigate } from "react-router-dom";
+import { useState } from "react";
+
+//Material Tailwind Components
 import {
   Card,
   Typography,
@@ -11,29 +15,27 @@ import {
   Button,
 } from "@material-tailwind/react";
 
-import { FaRegUserCircle as UserCircleIcon } from "react-icons/fa";
-import {
-  MdDashboard as PresentationChartBarIcon,
-  MdInbox as InboxIcon,
-} from "react-icons/md";
-
-import { TbPhotoCog } from "react-icons/tb";
+//React Icons
+import { FaRegUserCircle } from "react-icons/fa";
+import { MdSummarize, MdDashboard, MdInbox } from "react-icons/md";
 import { IoCodeWorking } from "react-icons/io5";
-import { MdSummarize } from "react-icons/md";
 import { IoChatboxEllipsesSharp } from "react-icons/io5";
-import { SiAudiomack } from "react-icons/si";
 import { BiSolidNoEntry } from "react-icons/bi";
+import { SiAudiomack } from "react-icons/si";
+import { TbPhotoCog } from "react-icons/tb";
 
-import aiGenieIcon from "/public/favicon.png";
+//Shared Components
 import ProTag from "../../Shared/ProTag";
-import { useNavigate } from "react-router-dom";
-import { useState } from "react";
+import aiGenieIcon from "../../../assets/favicon.png";
 
+//Functions Components
 export function UserDashNav() {
   const navigator = useNavigate();
   const [isPro, setIsPro] = useState(true);
   const [size, setSize] = useState(null);
   const handleOpen = (value) => setSize(value);
+
+  //Handle PRO user navigation
   const navigatePros = (location) => {
     if (isPro) {
       navigator(location);
@@ -44,8 +46,8 @@ export function UserDashNav() {
   };
 
   return (
-    <div>
-      <Card className=" w-full p-4 shadow-xl shadow-blue-gray-900/5">
+    <div className="flex justify-center items-start p-2 h-full">
+      <Card className=" w-full h-full  shadow-xl shadow-blue-gray-900/5">
         <List>
           {/* //Dashboard// */}
           <button
@@ -56,7 +58,7 @@ export function UserDashNav() {
           >
             <ListItem>
               <ListItemPrefix>
-                <PresentationChartBarIcon className="h-5 w-5" />
+                <MdDashboard className="h-5 w-5" />
               </ListItemPrefix>
               Dashboard
             </ListItem>
@@ -158,7 +160,7 @@ export function UserDashNav() {
           >
             <ListItem>
               <ListItemPrefix>
-                <InboxIcon className="h-5 w-5" />
+                <MdInbox className="h-5 w-5" />
               </ListItemPrefix>
               Support Inbox
               {!isPro && (
@@ -189,36 +191,40 @@ export function UserDashNav() {
           >
             <ListItem>
               <ListItemPrefix>
-                <UserCircleIcon className="h-5 w-5" />
+                <FaRegUserCircle className="h-5 w-5" />
               </ListItemPrefix>
               Profile
             </ListItem>
           </button>
         </List>
-        <Card className="relative mt-10 mx-auto rounded-main  bg-color-primary bg-gradient-to-t  from-[#4A25E1]  to-color-primary p-5 text-white text-center">
-          <div className="absolute top-[-20%] translate-x-full translate-y-[-5%] border-2 border-white p-2 bg-color-primary rounded-full">
-            <img className="h-10 w-10" src={aiGenieIcon} alt="" />
-          </div>
-          <Typography variant="h6" className="mb-1">
-            Go unlimited with PRO
-          </Typography>
-          <Typography variant="small" className="font-normal opacity-80">
-            Get your Project to another level and start doing more with AI Genie
-            PRO!
-          </Typography>
-          <div className="mt-4 flex gap-3 mx-auto">
-            <button className="bg-color-primary rounded-main px-3 py-2">
-              <Typography
-                as="a"
-                href="#"
-                variant="small"
-                className="font-medium"
-              >
-                Upgrade Now
-              </Typography>
-            </button>
-          </div>
-        </Card>
+
+        {/* //Upgrade Card// */}
+        {!isPro && (
+          <Card className="relative mt-10 mx-auto rounded-main  bg-color-primary bg-gradient-to-t  from-[#4A25E1]  to-color-primary p-5 text-white text-center">
+            <div className="absolute top-[-20%] translate-x-full translate-y-[-5%] border-2 border-white p-2 bg-color-primary rounded-full">
+              <img className="h-10 w-10" src={aiGenieIcon} alt="" />
+            </div>
+            <Typography variant="h6" className="mb-1">
+              Go unlimited with PRO
+            </Typography>
+            <Typography variant="small" className="font-normal opacity-80">
+              Get your Project to another level and start doing more with AI
+              Genie PRO!
+            </Typography>
+            <div className="mt-4 flex gap-3 mx-auto">
+              <button className="bg-color-primary rounded-main px-3 py-2">
+                <Typography
+                  as="a"
+                  href="#"
+                  variant="small"
+                  className="font-medium"
+                >
+                  Upgrade Now
+                </Typography>
+              </button>
+            </div>
+          </Card>
+        )}
       </Card>
 
       {/* modal */}
