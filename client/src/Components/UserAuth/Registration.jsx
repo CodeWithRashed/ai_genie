@@ -1,4 +1,4 @@
-import { useForm } from "react-hook-form";
+import { useForm} from "react-hook-form";
 import PropTypes from "prop-types";
 import Logo from "../../assets/logo.png";
 import signUpImage from "../../assets/sign_up.png";
@@ -6,19 +6,53 @@ import { RiLockPasswordFill } from "react-icons/ri";
 import { MdEmail } from "react-icons/md";
 import { FaEye, FaUser } from "react-icons/fa";
 import { TbPhotoPlus } from "react-icons/tb";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
+import { UploadImage } from "../../Hooks/ImageUpload";
+import { GlobalDataContext } from "../../ContextApi/DataContext";
+
+
 
 const Registration = ({ setOnPage }) => {
+  const {createUser, updateUserProfile} = useContext(GlobalDataContext);
   //Show Password Status
   const [isShowPass, setIsShowPass] = useState(null);
 
+  //Handle Form Submit
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
-  const onSubmit = (data) => console.log(data);
+  const onSubmit = async (data) => {
+    const name = data.name;
+    const email = data.email;
+    const password = data.password;
+    const role = "User"
+    let image = null;
+
+    //Uploading Image to IMAGE_BB
+    try {
+      const userImage = data.image[0];
+      const uploadData = await UploadImage(userImage);
+      console.log(uploadData?.data.data.display_url);
+      image = uploadData?.data?.data?.display_url
+    } catch (error) {
+      console.log(error);
+    }
+
+    const user = {name, email, password, image, role}
+    console.log(user)
+
+    //Creating user
+    try{
+     const result = await createUser(email, password)
+     await updateUserProfile(name, image)
+    }catch(error) {
+      console.log(error)
+    }
+  };
+
   return (
     // Form Container
     <div className="grid lg:grid-cols-2 h-screen items-center">
