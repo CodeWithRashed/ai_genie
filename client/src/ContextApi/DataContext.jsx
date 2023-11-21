@@ -75,9 +75,7 @@ const DataContext = ({ children }) => {
     updateUserProfile,
   }
 
-  return (
-    <DataContext.Provider value={authInfo}>{children}</DataContext.Provider>
-  )
+  return (<GlobalDataContext.Provider value={authInfo}>{children}</GlobalDataContext.Provider>)
 }
 
-export default DataContext
+ export default DataContext

@@ -7,11 +7,12 @@ import { ThemeProvider } from "@material-tailwind/react";
 import DataContext from "./ContextApi/DataContext.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
+  <DataContext>
   <React.StrictMode>
-    <DataContext>
     <ThemeProvider>
       <RouterProvider router={router} />
     </ThemeProvider>
-    </DataContext>
+
   </React.StrictMode>
+  </DataContext>
 );
